@@ -4,9 +4,8 @@ Due date: 09/25/2023
 
 ### Group Members
 
-#### Angel Badillo
-
-#### Leslie Cook
+#### - Angel Badillo
+#### - Leslie Cook
 
 ### Overview:
 
@@ -16,27 +15,24 @@ This is a project written in Python3 that implements a basic shell that executes
 
 - First, ensure all modules are installed for the shell commands by running
 
-  `pip3 install -r requirements.txt`
-
-  `pip install -r requirements.txt`
+  `pip3 install -r requirements.txt` or `pip install -r requirements.txt`
 
 - Next, execute the shell by running
 
-  `python3 shell.py`
-
-  `python shell.py`
+  `python3 shell.py` or `python shell.py`
 
 - To exit the shell, type
 
   `exit` or `ctrl-c`
 
+- For more information about a specificcommand use the help flag
+
+  `command --help`
+
 - To run a command from the shell, type one of the commands from the list below including any flags and parameters needed
 
   `command -flags parameters`
   
-- For more information about a command, type
-
-  `command --help`
 
 ## Table of Commands
 
@@ -64,6 +60,17 @@ This is a project written in Python3 that implements a basic shell that executes
 |  ✅  |  [head](cmd_pkg/Head.py)  | writes to stdout the first 10 lines of a file |    Leslie    |       `-n, n is int`       |        `<path to file>`        |
 |  ✅  |  [tail](cmd_pkg/Tail.py)  | writes to stdout the last 10 lines of a file |    Leslie    |       `-n, n is int`       |        `<path to file>`        |
 |  ✅  |  [less](cmd_pkg/Less.py)  |      shows files contents on one screen      |    Leslie    |                              |        ` <path to file>`        |
+
+
+# List of support functions
+|        Function        |                  Description                  |
+| :--------------------: | :-------------------------------------------: |
+| [getch][getch.py]   | captures the users input for the shell |
+| [ParseCommand][ParseCommand.py] | parses the command line input into a list of commands  to handle pipes and redirects |
+| [shell][shell.py] | main program that launches the shell |
+| [init](cmd_pkg/__init__.py) | packages each commands in [cmd_pkg](cmd_pkg) to use in the shell | 
+| [InvalidFlagMsg](cmd_pkg/InvalidFlagMsg.py) | creates error message when a flag not recognized |        
+| [TokenizeFlags](cmd_pkg/TokenizeFlags.py) | checks for flags to direct the command behavior |  
 
 ***References***
 
