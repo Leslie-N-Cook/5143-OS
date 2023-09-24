@@ -50,60 +50,55 @@ def grep(**kwargs)-> str:
         count:int = 0
         # print(kwargs)
         try:
-            for param in params:
-                if len(params)>1:
-                    pattern = params[0]
-                    path = params[1::]
-                    # print(path)
-                    # for file in path:
-                    if os.path.isfile(param):
-                            with open(param, 'r') as file:
-                                line_number = 1
-                                for line in file:
-                                    line = line.strip()
-                                    match = False
-                                
-                                    
-                                    if ignore_case:
-                                        pattern = re.escape(pattern)
-                                        # ignore upper and lower cases
-                                        if re.search(pattern, line, re.IGNORECASE):
-                                            match = True
-                                            
-                                    elif pattern in line:
+            if len(params) >= 2:
+                pattern = params[0]
+                paths = params[1:]
+
+                for path in paths:
+                    if os.path.isfile(path):
+                        with open(path, 'r') as file:
+                            line_number = 1
+                            for line in file:
+                                line = line.strip()
+                                match = False
+
+                                if ignore_case:
+                                    pattern = re.escape(pattern)
+                                    if re.search(pattern, line, re.IGNORECASE):
                                         match = True
+                                         
+                                elif pattern in line:
+                                    match = True
+                                   
+
+                                if match and not invert_match:
+                                    if not list_file:
+                                        contents.append(f'{os.path.abspath(path)}: {line_number}: {line}')
+                                    elif list_file:
+                                        contents.append(f'{os.path.abspath(path)}')
                                         
-                                    if match and not invert_match:
-                                        if not count_only and not list_file:
-                                            contents.append(f'{os.getcwd()}/{file}: {line_number}: {line}')
-                                        count+=1
-                                    
-                                    elif not match and invert_match:
-                                        if not count_only:
-                                            contents.append(f'{os.getcwd()}/{file}: {line_number}: {line}')
-                                    
-                                    for file in path:
-                                        if match and list_file:
-                                            contents.append(f'{file}')
-                                            result = "\n".join(contents)
-                                            return result
-            
-                                    line_number += 1  
-                                    
-                                if count_only:
-                                    return count
-                                        
-                                result = "\n".join(contents)
-                                return result
-                            
-            
-        except FileNotFoundError:
-            result = f"Error: '{file}' not found."
-        
-    
-     
+                                    count += 1
+                                elif not match and invert_match:
+                                    if not count_only:
+                                        contents.append(f'{os.path.abspath(path)}: {line_number}: {line}')
+
+                                line_number += 1
+
+                if count_only:
+                    return str(count)
+
+                if list_file:
+                    # contents = [os.path.abspath(path) for path in paths]
+                    result = "\n".join(set(contents)) 
+                    
+                else:
+                    result = "\n".join(contents)
+                    
+        except FileNotFoundError as e:
+            result = f"Error: '{e.filename}' not found."
+
     return result
-    
+
 if __name__ == "__main__":
 
 
@@ -111,4 +106,4 @@ if __name__ == "__main__":
     #     print(grep.__doc__)
     #     sys.exit(1)
     # grep(pattern=sys.argv[1], path=sys.argv[2])
-    print(grep(params=["Angel","README.md"]))
+    print(grep(params=["Angel","README.md", ]))
