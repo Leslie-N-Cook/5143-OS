@@ -37,7 +37,7 @@ This is a project written in Python3 that implements a basic shell that executes
 ## Table of Commands
 
 |  -  |        Command        |                  Description                  |    Author    |             Flags             |            Parameters            |
-| --- | :--------------------: | :-------------------------------------------: | :-----------: | :---------------------------: | :-------------------------------: |
+| :-- | :--------------------: | :-------------------------------------------: | :-----------: | :---------------------------: | :-------------------------------: |
 | 1 |    [ls](cmd_pkg/Ls.py)    |               directory listing               | Angel, Leslie | `-l` `-a` `-h` `-lah` |          `<dir name>`          |
 | 2 |   [pwd](cmd_pkg/Pwd.py)   |            print working directory            |     Angel     |                              |                                  |
 | 3 |    [cd](cmd_pkg/Cd.py)    |               change directory               |     Angel     |                              | `~` or `..` or `<dir name>` |
