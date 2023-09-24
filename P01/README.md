@@ -2,10 +2,9 @@
 
 Due date: 09/25/2023
 
-### Group Members
-
-#### - Angel Badillo
-#### - Leslie Cook
+### Authors: 
+#### - [Leslie Cook](https://github.com/Leslie-N-Cook)
+#### - [Angel Badillo](https://github.com/It-Is-Legend27)
 
 ### Overview:
 
