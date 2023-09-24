@@ -1,9 +1,9 @@
-## Linux Shell commands implemented in Python
+# Linux Shell commands implemented in Python
 ### Authors: 
 ### - Leslie Cook 
 ### - Angel Badillo
  
-# List of commands
+## List of commands
 
 |        Command        |                  Description                  |             Flags             |            Parameters            |
 | :--------------------: | :-------------------------------------------: |  :---------------------------: | :-------------------------------: |
@@ -32,7 +32,7 @@
 
 
 
-# List of support functions
+## List of support functions
 |        Function        |                  Description                  |
 | :--------------------: | :-------------------------------------------: |
 | [init](__init__.py) | initializes the commands in a package for the shell to use | 
