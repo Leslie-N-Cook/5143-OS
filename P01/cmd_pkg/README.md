@@ -1,7 +1,7 @@
 # Linux Shell commands implemented in Python
 ### Authors: 
-### - Leslie Cook 
-### - Angel Badillo
+#### - [Leslie Cook](https://github.com/Leslie-N-Cook)
+#### - [Angel Badillo](https://github.com/It-Is-Legend27)
  
 ## List of commands
 
