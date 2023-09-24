@@ -65,9 +65,9 @@ This is a project written in Python3 that implements a basic shell that executes
 # List of support functions
 |        Function        |                  Description                  |
 | :--------------------: | :-------------------------------------------: |
-| [getch][getch.py]   | captures the users input for the shell |
-| [ParseCommand][ParseCommand.py] | parses the command line input into a list of commands  to handle pipes and redirects |
-| [shell][shell.py] | main program that launches the shell |
+| [getch](getch.py)   | captures the users input for the shell |
+| [ParseCommand](ParseCommand.py) | parses the command line input into a list of commands  to handle pipes and redirects |
+| [shell](shell.py) | main program that launches the shell |
 | [init](cmd_pkg/__init__.py) | packages each commands in [cmd_pkg](cmd_pkg) to use in the shell | 
 | [InvalidFlagMsg](cmd_pkg/InvalidFlagMsg.py) | creates error message when a flag not recognized |        
 | [TokenizeFlags](cmd_pkg/TokenizeFlags.py) | checks for flags to direct the command behavior |  
